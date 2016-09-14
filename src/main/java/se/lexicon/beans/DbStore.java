@@ -20,7 +20,7 @@ import java.util.List;
 
 @Stateless
 public class DbStore {
-    @PersistenceContext(unitName = "Jonas-JPA1-punit")
+    @PersistenceContext(unitName = "Pagiste-JPA1-punit")
     private EntityManager em;
 
     public void addCourse(String coursename, int studentid) {
