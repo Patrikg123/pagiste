@@ -1,0 +1,44 @@
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+        <h:graphicImage id="header_picture" name="images/header.png"  />
+
+<!-- render a menu on role
+
+    rendered = "#{request.isUserInRole('ADMIN')}"
+    need some config in web.xml
+
+    or
+
+    rendered = "#{yoursessionbean.userRole == Roles.ADMIN}" -->
+
+
+<h:body>
+
+       <h:selectOneMenu value="#{bean.item}">
+           <f:selectItem itemValue="one" />
+           <f:selectItem itemValue="two" />
+           <f:selectItem itemValue="three" />
+           <f:ajax render="results" />
+       </h:selectOneMenu>
+
+       <h:panelGroup id="results">
+           <h:panelGroup rendered="#{bean.item == 'one'}">
+               You have selected "one".
+           </h:panelGroup>
+           <h:panelGroup rendered="#{bean.item == 'two'}">
+               You have selected "two".
+           </h:panelGroup>
+           <h:panelGroup rendered="#{bean.item == 'three'}">
+               You have selected "three".
+           </h:panelGroup>
+       </h:panelGroup>
+
+   </h:body>
+
+-->
+
+    </f:view>
+</ui:composition>

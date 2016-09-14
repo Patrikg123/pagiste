@@ -1,0 +1,31 @@
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+
+        <h:form id="loginForm" method="POST" action="j_security_check">
+            <h:panelGrid columns="2">
+                <!-- <h:outputLabel for="username">Username:</h:outputLabel> -->
+                <h:inputText id="username" value="#{loginManager.username}"
+                        pt:placeholder="#{i18NText.userName}"
+                        name="username"
+                        required="true"
+                        requiredMessage="#{i18NText.userNameRequired}" />
+                <br /><br />
+                <!-- <h:outputLabel value="password" /> -->
+                <h:inputSecret id="password" value="#{loginManager.password}"
+                        pt:placeholder="#{i18NText.password}"
+                        name= "password"
+                        required="true"
+                        requiredMessage="#{i18NText.passwordRequired}"/>
+                <br /><br />
+                <h:commandButton id="submitButton" value="#{i18NText.buttonLogin}"
+                        action="#{loginManager.validateUsernamePassword}" />
+
+            <h:messages styleClass="error" style="color:red" /> <br />
+            </h:panelGrid>
+        </h:form>
+
+    </f:view>
+</ui:composition>

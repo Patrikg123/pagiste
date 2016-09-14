@@ -1,0 +1,12 @@
+Connect in IntelliJ show database - tables
+
+Data Sources
+
+PostgreSQL
+
+Host: localhost
+Database: pagiste
+User: admin
+Passsword: Cow$girl@!
+
+URL: jdbc:postgresql://localhost:5432/pagiste  <-- observe pagiste

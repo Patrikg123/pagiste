@@ -1,0 +1,24 @@
+<ui:composition xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+
+        <!-- a first layout -->
+
+        <h:form id="SearchCourses" method="POST" action="searchCourses">
+            <h:panelGrid columns="2">
+
+                <h:inputText id="search" value="#{searchCourse.search}"
+                             pt:placeholder="#{i18NText.search}"
+                             name="search" />
+                <br /><br />
+                <h:commandButton id="submitButton" value="#{i18NText.submitButton}"
+                                 action="#{searchCourse.search}" />
+
+                <h:messages styleClass="error" style="color:red" /> <br />
+            </h:panelGrid>
+        </h:form>
+
+    </f:view>
+</ui:composition>

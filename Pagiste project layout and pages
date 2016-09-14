@@ -1,0 +1,79 @@
+Pagiste project layout and pages
+
+We need ONE layoutpage. It include 1 header, 1 content and 1 footer.
+
+The header show a logotype for Pagesti-project, 4 different menus (not logged in, as student, as teacher and as admin) + signed in as name and a logout button.
+
+We have a startpage with Page-Project information and this page is used at firstpage for new visitor and as logout page when people sign out.
+
+We also have a login form page.
+
+When logged as student we have Course overview, Attended statistics and name + logout button in the menu.
+
+We have as default page the Course overview. The student can register/unregister for courses and see an overview of all signed courses + closest class time.
+There is also a button to show all class times for a special course. It will show a calendar page.
+The studen also can see presence statistics.
+
+That make 3 pages for student. 1. Course Overview, 2 Calendar page, 3. statistics
+	1. student_courses.xhtml
+	2. student_statistics.xhtml
+
+
+
+When logged as teacher we have course overview, Attended statistic and name + logout button in the menu
+
+We have as default the Course overview. The teacher can see the courses that belong to the teacher + closest class time.
+There is also a button to show all class times for a special course. It will show a calendar page.
+The teacher also see the presence statistics for all students and courses.
+
+That make 3 pages for teacher. 1. Course overview, 2 Calendar page, 3. statistics
+	1. teacher_courses.xhtml
+	2. teacher_statistics.xhtml
+
+
+When logged as admin we have course overview, attended statistic and name + logout button in the menu
+
+We have as default the Course overview. The admin can create new courses and assign a teacher + students. (probably also change that info)
+The admin can also create teacher and student accounts.
+The admin can also see all statistics about the courses and students. (daily info as defaults?)
+
+That make 3 pages for the admin. 1. Course overview, 2. Calendar page, 3 statistic
+	1. admin_courses.xhtml
+	2. admin_statistics.xhtml
+
+
+In total we need 13 xhtml-files (if we not split more)
+
+1 laoyout / template
+
+1 header with the logotype + the menu + the name (clickable to a profile page) + logout button (?) <-- it is not the same links for student, teacher, admin (different pages)
+1 startpage with login button and some info (index.xhtml)
+1 login form page (login.xhtml)
+
+1 calendar page, it will show the class time for a selected course (course_calendar.xhtml)
+
+3 different Course overview pages
+3 different statistics pages
+
+1 footer with info about the project team
+
+1 profile page, should be able change information and password
+
+
+We need a css file able to style all this, especially the tables.
+
+All files should also work together with translations files.
+
+The name of the project is Pagiste and we should make a picture logotype The Pagiste Project to the header.
+
+
+
+What we need from the tables
+
+Show all courses from the course table
+Show all students, teachers from the users table
+
+
+Show attended class times, courses per student. 
+We know the student name and get course from course table and course_time from course_time table.
+
