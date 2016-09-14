@@ -67,7 +67,7 @@ public String getH(){
 
 
 
-        String Coursename = "History";
+        String Coursename = "Chemistry";
         int userid = 2;
         store.addCourse(Coursename, userid);
         return "index.xhtml";
