@@ -20,12 +20,15 @@ import java.util.List;
 
 @Stateless
 public class DbStore {
-    @PersistenceContext(unitName = "Pagiste-JPA1-punit")
+    @PersistenceContext(unitName = "Jonas-JPA1-punit")
     private EntityManager em;
 
-    public void addCourse(Course c) {
-        System.out.println(em + ": Adding question " + c);
-   //     em.persist(c);
+    public void addCourse(String coursename, int studentid) {
+        Course c = new Course();
+        c.setCoursename(coursename);
+        c.setUser_id(studentid);
+        System.out.println(em + ": Adding course " + c);
+        em.persist(c);
     }
     public Course getCoursename(long id){
         System.out.println("EJB");
