@@ -32,9 +32,12 @@ public class DbStore {
     }
     public Course getCoursename(long id){
         System.out.println("EJB");
+        System.out.println("EJ");
 
         return em.find(Course.class, id);
 
 
     }
+
+/* comment to commit */
 }
