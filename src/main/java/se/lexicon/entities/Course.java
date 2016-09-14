@@ -1,14 +1,9 @@
 package se.lexicon.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.validation.constraints.Max;
 
 /**
@@ -27,6 +22,12 @@ public class Course {
 
 
         @Id
+        @SequenceGenerator(name="seq_course",
+                sequenceName="seq_course",
+                allocationSize=1)
+        @GeneratedValue(strategy = GenerationType.SEQUENCE,
+                generator="seq")
+        @Column(name = "course_id", updatable=false)
         private long course_id;
         private String coursename;
         private int user_id;
