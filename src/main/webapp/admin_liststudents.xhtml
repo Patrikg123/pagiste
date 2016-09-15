@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h:form>
+
+    <h1><h:outputText value ="registered srudents"></h:outputText></h1>
+    <h:dataTable value="#{studentView.ListStudents()}" var="s" rules="all">
+        <h:column>
+            <f:facet name="header">Student Id</f:facet>
+            <h:outputText value="#{s.student_id}"></h:outputText>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Username</f:facet>
+            <h:outputText value="#{s.username}"></h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">First name</f:facet>
+            <h:outputText value="#{s.firstname}"></h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Last name</f:facet>
+            <h:outputText value="#{s.lastname}"></h:outputText>
+        </h:column>
+    </h:dataTable>
+
+
+</h:form>
+
+
+</body>
+</html>
