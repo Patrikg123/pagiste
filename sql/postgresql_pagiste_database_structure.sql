@@ -4,6 +4,8 @@ DROP TABLE users;
 CREATE SEQUENCE seq_users;
 CREATE TABLE users (
 	user_id INT4 NOT NULL DEFAULT nextval('seq_users'),
+	firstname VARCHAR (64) NOT NULl,
+	lastname VARCHAR (64) NOT NULL,
 	username VARCHAR(64) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	emailaddress VARCHAR(64) NOT NULL,

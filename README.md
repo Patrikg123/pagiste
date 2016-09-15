@@ -38,6 +38,14 @@ git config --global user.name "Your name"
 
 git config --global user.email mail@mail.com
 
+or if you are using several different git accounts on same machine/system instead use local parameters
+
+git config user.name "Your name"
+
+git config user.email mail@mail.com
+
+Then you easy can have different git account in each project.
+
 Done*
 
 
