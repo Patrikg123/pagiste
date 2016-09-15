@@ -1,5 +1,7 @@
 package se.lexicon.beans;
 
+import se.lexicon.entities.Course;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -10,7 +12,7 @@ import javax.inject.Inject;
 
         import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-
+import java.util.List;
 
 
 @ManagedBean
@@ -85,6 +87,11 @@ public String getH(){
         store.addCourse(Coursename, userid);
         return "index.xhtml";
 
+    }
+
+    public List<Course> ListCourses(){
+        List<Course> courselista = store.Courselist();
+        return  courselista;
     }
 
 

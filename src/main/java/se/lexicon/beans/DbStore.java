@@ -4,9 +4,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- * Created by Elev1 on 2016-08-25.
- */
 
 
 import se.lexicon.entities.Course;
@@ -37,6 +34,14 @@ public class DbStore {
         return em.find(Course.class, id);
 
 
+    }
+    public List<Course> Courselist()
+
+    {
+        TypedQuery<Course> query =
+                em.createQuery("SELECT c from Course c", Course.class);
+        List<Course> courselista = query.getResultList();
+        return courselista;
     }
 
 /* comment to commit */
