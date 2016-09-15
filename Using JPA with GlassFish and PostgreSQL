@@ -1,8 +1,16 @@
-Using JPA with GlassFish and PostgreSQL
+Using JPA with GlassFish/Payara and PostgreSQL
 
 https://jdbc.postgresql.org/download.html
 
-spara postgresql-9.4.1209 filen i \glassfish-4.1.1\glassfish\domains\domain1\lib\
+save postgresql-9.4.1209 file in directory
+
+Glassfish
+\glassfish-4.1.1\glassfish\domains\domain1\lib\
+
+ or
+
+Payarya 
+\payara41\glassfish\domains\domain1\lib
 
 Restart the Glassfish server, if it is already running:
 
@@ -13,17 +21,18 @@ Skriv i commandprompten följande
 
 (skapa databasen i POSTGRESQL om du inte redan har gjort det)
 
-Nu skapar vi en connection pool för databasen i GlassFish
+Nu skapar vi en connection pool för databasen i GlassFish / Payara (notice, a bug in Glassfish require you to create the connection pool in asadmin, while you can choose to do it in Payara admin panel.)
 
 c:/asadmin <ENTER>
 
 asadmin> 
 
-create-jdbc-connection-pool --datasourceclassname org.postgresql.ds.PGSimpleDataSource --restype javax.sql.XADataSource --property portNumber=5432:password=Cow$girl@!:user=admin:serverName=localhost:databaseName=pagiste pagiste_postgresql_pool
+create-jdbc-connection-pool --datasourceclassname org.postgresql.ds.PGSimpleDataSource --restype javax.sql.XADataSource --property portNumber=5432:password=Cow$girl@!:user=admin:serverName=localhost:databaseName=pagiste pagistepool
+
 
 och nu skapar vi en JDBC Resource, this resource will be used in the JPA Configuration file to reference the connection pool.
 
-create-jdbc-resource --connectionpoolid pagiste_postgresql_pool jdbc/pagiste
+create-jdbc-resource --connectionpoolid pagistepool jdbc/jpapagiste
 
 slutligen 
 
