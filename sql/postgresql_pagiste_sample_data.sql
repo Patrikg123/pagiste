@@ -1,9 +1,9 @@
 
-INSERT INTO users (user_id, username, password, emailaddress) VALUES (1,'testgubbe','testgubbe', 'admin@localhost.se') ;
-INSERT INTO users (user_id, username, password, emailaddress) VALUES (2,'teacher1','password', 'admin@localhost.se') ;
-INSERT INTO users (user_id, username, password, emailaddress) VALUES (3,'studen1','password', 'admin@localhost.se') ;
-INSERT INTO users (user_id, username, password, emailaddress) VALUES (4,'Lisa Bengtsson','password', 'admin@localhost.se') ;
-INSERT INTO users (user_id, username, password, emailaddress) VALUES (5,'Kalle Andersson','password', 'admin@localhost.se') ;
+INSERT INTO users (user_id, firstname, lastname, username, password, emailaddress) VALUES (1, 'Test', 'Gubbe', 'testgubbe','testgubbe', 'admin@localhost.se') ;
+INSERT INTO users (user_id, firstname, lastname, username, password, emailaddress) VALUES (2, 'Johan', 'Karlsson', 'johan1','password', 'admin@localhost.se') ;
+INSERT INTO users (user_id, firstname, lastname, username, password, emailaddress) VALUES (3, 'Anders', 'Swärdh', 'Andsw1','password', 'admin@localhost.se') ;
+INSERT INTO users (user_id, firstname, lastname, username, password, emailaddress) VALUES (4, 'Lisa', 'Bengtsson', 'lisa98','password', 'admin@localhost.se') ;
+INSERT INTO users (user_id, firstname, lastname, username, password, emailaddress) VALUES (5, 'Kalle', 'Andersson', 'Kaans','password', 'admin@localhost.se') ;
 
 
 
