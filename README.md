@@ -46,6 +46,11 @@ git config user.email mail@mail.com
 
 Then you easy can have different git account in each project.
 
+If you get into trouble with global settings use
+
+git config --global --unset-all user.name
+git config --global --unset-all user.email
+
 Done*
 
 
