@@ -4,9 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
-/**
- * Created by Elev1 on 2016-09-13.
- */
+
 
 
 
@@ -14,19 +12,34 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 
-/**
- * Created by Elev1 on 2016-08-25.
- */
+
 @ManagedBean
 //@Named
 @SessionScoped
 public class DbTestBean {
 
     private int id;
-    private String question ;;   //= LoadQuestion();
+    private String question ;   //= LoadQuestion();
     private long counter = 1;
+    private String coursename = "Japanese";
+    private int userid = 2;
 
 
+    public String getCoursename() {
+        return coursename;
+    }
+
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
+    }
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
 
     public int getId() {
         return id;
@@ -67,8 +80,8 @@ public String getH(){
 
 
 
-        String Coursename = "Chemistry";
-        int userid = 2;
+        String Coursename = this.coursename;
+        int userid = this.userid;
         store.addCourse(Coursename, userid);
         return "index.xhtml";
 
