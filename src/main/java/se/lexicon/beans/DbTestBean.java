@@ -1,6 +1,7 @@
 package se.lexicon.beans;
 
 import se.lexicon.entities.Course;
+import se.lexicon.entities.Teacher;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -25,7 +26,24 @@ public class DbTestBean {
     private long counter = 1;
     private String coursename = "Japanese";
     private int userid = 2;
+    private String firsname = "pg";
+    private int teacher_id = 1;
 
+    public int getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(int teacher_id) {
+        this.teacher_id = teacher_id;
+    }
+
+    public String getFirsname() {
+        return firsname;
+    }
+
+    public void setFirsname(String firsname) {
+        this.firsname = firsname;
+    }
 
     public String getCoursename() {
         return coursename;
@@ -83,7 +101,7 @@ public String getH(){
 
 
         String Coursename = this.coursename;
-        int userid = this.userid;
+        int userid = this.teacher_id;
         store.addCourse(Coursename, userid);
         return "admin_listcourses.xhtml";
 
@@ -92,6 +110,11 @@ public String getH(){
     public List<Course> ListCourses(){
         List<Course> courselista = store.Courselist();
         return  courselista;
+    }
+
+    public List<Teacher> ListTeachers(){
+        List<Teacher> teacherlista = store.Teacherlist();
+        return  teacherlista;
     }
 
 

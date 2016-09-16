@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import se.lexicon.entities.Course;
 import se.lexicon.entities.Student;
+import se.lexicon.entities.Teacher;
 
 
 import javax.ejb.Stateless;
@@ -52,6 +53,15 @@ public class DbStore {
                 em.createQuery("SELECT s from Student s ORDER BY s.student_id", Student.class);
         List<Student> studentlista = query2.getResultList();
         return studentlista;
+    }
+
+    public List<Teacher> Teacherlist()
+
+    {
+        TypedQuery<Teacher> query3 =
+                em.createQuery("SELECT t from Teacher t", Teacher.class);
+        List<Teacher> teacherlista = query3.getResultList();
+        return teacherlista;
     }
 
 /* comment to commit */

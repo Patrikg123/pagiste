@@ -15,6 +15,9 @@
 <h1><h:outputText value ="Create a new course"></h:outputText></h1>
 <br></br>
     <h:inputText value="#{dbTestBean.coursename}"></h:inputText>
+    <h:selectOneMenu value="#{dbTestBean.teacher_id}">
+        <f:selectItems value="#{dbTestBean.ListTeachers()}" var="teacher" itemValue="#{teacher.teacher_id}" itemLabel="#{teacher.firstname}" />
+    </h:selectOneMenu>
 <h:commandButton value="New Course" action="#{dbTestBean.CreateCourse}" class="btn btn-success"></h:commandButton>
 
 </h:form>
