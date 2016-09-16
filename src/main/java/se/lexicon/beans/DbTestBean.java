@@ -85,7 +85,7 @@ public String getH(){
         String Coursename = this.coursename;
         int userid = this.userid;
         store.addCourse(Coursename, userid);
-        return "index.xhtml";
+        return "admin_listcourses.xhtml";
 
     }
 

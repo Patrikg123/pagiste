@@ -49,7 +49,7 @@ public class DbStore {
 
     {
         TypedQuery<Student> query2 =
-                em.createQuery("SELECT s from Student s", Student.class);
+                em.createQuery("SELECT s from Student s ORDER BY s.student_id", Student.class);
         List<Student> studentlista = query2.getResultList();
         return studentlista;
     }
