@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
+import java.util.List;
 
 /**
  * Created by Elev1 on 2016-09-12.
@@ -31,6 +32,9 @@ public class Course {
         private long course_id;
         private String coursename;
         private int user_id;
+    @ManyToMany(mappedBy = "courses", cascade = CascadeType.PERSIST)
+    private List<Student> students;
+
 
     public Course() {
     }
@@ -63,6 +67,14 @@ public class Course {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }
 

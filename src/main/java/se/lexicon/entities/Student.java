@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Elev1 on 2016-09-12.
@@ -43,6 +45,19 @@ public class Student {
     @Column(table="users", name="lastname")
     private String lastname;
 
+    @ManyToMany
+    @JoinTable(name="student_course",
+            joinColumns=
+            @JoinColumn(name="student_id", referencedColumnName="id"),
+            inverseJoinColumns=
+            @JoinColumn(name="course_id", referencedColumnName="id")
+    )
+   // public List<Course> getCourses() { return courses ; }
+    public List<Course> courses;
+
+
+
+
 
 
     //Getters and setters
@@ -78,5 +93,13 @@ public class Student {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
