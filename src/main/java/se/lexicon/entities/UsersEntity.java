@@ -6,11 +6,18 @@ import java.sql.Timestamp;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  */
+
 @Entity
 @Table(name = "users", schema = "public", catalog = "pagiste")
 public class UsersEntity {
 
+    // ***********************
+    // **     Attributes    **
+    // ***********************
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_users")
+    @SequenceGenerator(name="seq_users", sequenceName="seq_users", allocationSize=1)
     @Column(name = "user_id")
     private int userId;
 
@@ -32,6 +39,9 @@ public class UsersEntity {
     @Column(name = "last_login")
     private Timestamp lastLogin;
 
+    // ******************************
+    // **    Getters & Setters     **
+    // ******************************
 
     public int getUserId() {
         return userId;
@@ -94,6 +104,7 @@ public class UsersEntity {
     public void setLastLogin(Timestamp lastLogin) {
         this.lastLogin = lastLogin;
     }
+
 
     @Override
     public boolean equals(Object o) {

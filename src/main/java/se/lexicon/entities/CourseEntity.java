@@ -5,10 +5,18 @@ import javax.persistence.*;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  */
+
 @Entity
 @Table(name = "course", schema = "public", catalog = "pagiste")
 public class CourseEntity {
+
+    // ***********************
+    // **     Attributes    **
+    // ***********************
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_course")
+    @SequenceGenerator(name="seq_course", sequenceName="seq_course", allocationSize=1)
     @Column(name = "course_id")
     private int courseId;
 
@@ -18,6 +26,9 @@ public class CourseEntity {
     @Column(name = "user_id")
     private int userId;
 
+    // ******************************
+    // **    Getters & Setters     **
+    // ******************************
 
     public int getCourseId() {
         return courseId;
@@ -44,6 +55,10 @@ public class CourseEntity {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    // ******************************
+    // **     EQUALS & HASH        **
+    // ******************************
 
     @Override
     public boolean equals(Object o) {

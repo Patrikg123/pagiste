@@ -5,11 +5,18 @@ import javax.persistence.*;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  */
+
 @Entity
 @Table(name = "user_group", schema = "public", catalog = "pagiste")
 public class UserGroupEntity {
 
+    // ***********************
+    // **     Attributes    **
+    // ***********************
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_users_group")
+    @SequenceGenerator(name="seq_users_group", sequenceName="seq_users_group", allocationSize=1)
     @Column(name = "group_id")
     private int groupId;
 
@@ -18,6 +25,10 @@ public class UserGroupEntity {
 
     @Column(name = "group_name")
     private String groupName;
+
+    // ******************************
+    // **    Getters & Setters     **
+    // ******************************
 
 
     public int getGroupId() {
