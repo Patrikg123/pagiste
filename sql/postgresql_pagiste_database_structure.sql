@@ -20,7 +20,7 @@ CREATE TABLE user_group (
 	group_id INT4 NOT NULL DEFAULT nextval('seq_user_group'),
 	user_id INT4 NOT NULL,
 	group_name VARCHAR(128) NOT NULL
-	,PRIMARY KEY (user_id));
+	,PRIMARY KEY (group_id));
 
 DROP SEQUENCE seq_course CASCADE;
 DROP TABLE course;
@@ -68,4 +68,4 @@ CREATE TABLE attended (
 	course_time_id INT4 NOT NULL,
 	user_id INT4 NOT NULL,
 	last_updated TIMESTAMP
-	,PRIMARY KEY (course_id));
+	,PRIMARY KEY (attended_id));
