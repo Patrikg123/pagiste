@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h:form>
+
+    <h1><h:outputText value ="Create a new course"></h:outputText></h1>
+    <br></br>
+    <h:inputText value="#{dbTestBean.coursename}"></h:inputText>
+    <h:selectOneMenu value="#{dbTestBean.teacher_id}">
+        <f:selectItems value="#{dbTestBean.ListTeachers()}" var="teacher" itemValue="#{teacher.teacher_id}" itemLabel="#{teacher.firstname}" />
+    </h:selectOneMenu>
+    <h:commandButton value="New Course" action="#{dbTestBean.CreateCourse}" class="btn btn-success"></h:commandButton>
+
+</h:form>
+
+
+</body>
+</html>

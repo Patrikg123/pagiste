@@ -99,4 +99,34 @@ public class StudentView{
         List<String> studentlista =new ArrayList<String>();
         return  studentlista;
     }
+
+    public List<Course> ListRegisteredCourses(long id){
+        System.out.println(id);
+        Student studenttofind = null;
+        List<Course> registeredcourses = new ArrayList<Course>();
+        // List<Student> studentlista = ListStudents();
+        List<Student> studentlista = store.Studentlist();
+        for(Student s: studentlista){
+
+            if(s.getStudent_id() == id) {
+
+                studenttofind = s;
+
+            }
+            }
+
+            if(studenttofind != null){
+
+                registeredcourses = studenttofind.getCourses();
+
+        }
+
+
+
+
+
+
+
+        return  registeredcourses;
+    }
 }
