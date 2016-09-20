@@ -24,7 +24,7 @@ public class StudentCourseEntity {
 
     @Column(name = "registered_date")
     private Timestamp registeredDate;
-    
+
     @Column(name = "unregistered_date")
     private Timestamp unregisteredDate;
 
