@@ -17,7 +17,9 @@ public class User implements Serializable {
     // ***********************
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="seq_users",
+            sequenceName="'seq_users'",
+            allocationSize=1)
     private Long user_id;
 
     @Column(name = "username", length = 64)
@@ -26,6 +28,14 @@ public class User implements Serializable {
     private String password;
     @Column(name = "emailaddress", length = 64)
     private String emailaddress;
+
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
+
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date last_login;
 
@@ -95,6 +105,22 @@ public class User implements Serializable {
     public void setLast_login(Date last_login) {
 
         this.last_login = last_login;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     //   }
