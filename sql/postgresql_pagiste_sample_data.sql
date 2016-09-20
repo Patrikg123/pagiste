@@ -72,6 +72,6 @@ INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_upda
 INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (10,1,2, 4, '2016-04-05 09:59:32') ;
 INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (11,1,2, 5, '2016-04-05 09:59:32') ;
 
-INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (12,1,7, 9, '2016-04-05 12:00:32') ;
-INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (13,1,7, 4, '2016-04-05 12:00:32') ;
-INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (14,1,7, 5, '2016-04-05 12:00:32') ;
+INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (12,4,7, 9, '2016-04-05 12:00:32') ;
+INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (13,4,7, 4, '2016-04-05 12:00:32') ;
+INSERT INTO attended (attended_id, course_id, course_time_id, user_id, last_updated) VALUES (14,4,7, 5, '2016-04-05 12:00:32') ;
