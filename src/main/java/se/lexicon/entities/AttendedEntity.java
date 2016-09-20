@@ -9,15 +9,23 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "attended", schema = "public", catalog = "pagiste")
 public class AttendedEntity {
-
+    @Id
+    @Column(name = "attended_id")
     private int attendedId;
+
+    @Column(name = "course_id")
     private int courseId;
+
+    @Column(name = "course_time_id")
     private int courseTimeId;
+
+    @Column(name = "user_id")
     private int userId;
+
+    @Column(name = "last_updated")
     private Timestamp lastUpdated;
 
-    @Basic
-    @Column(name = "attended_id")
+
     public int getAttendedId() {
         return attendedId;
     }
@@ -26,8 +34,7 @@ public class AttendedEntity {
         this.attendedId = attendedId;
     }
 
-    @Id
-    @Column(name = "course_id")
+
     public int getCourseId() {
         return courseId;
     }
@@ -36,8 +43,7 @@ public class AttendedEntity {
         this.courseId = courseId;
     }
 
-    @Basic
-    @Column(name = "course_time_id")
+
     public int getCourseTimeId() {
         return courseTimeId;
     }
@@ -46,8 +52,7 @@ public class AttendedEntity {
         this.courseTimeId = courseTimeId;
     }
 
-    @Basic
-    @Column(name = "user_id")
+
     public int getUserId() {
         return userId;
     }
@@ -56,8 +61,7 @@ public class AttendedEntity {
         this.userId = userId;
     }
 
-    @Basic
-    @Column(name = "last_updated")
+
     public Timestamp getLastUpdated() {
         return lastUpdated;
     }
