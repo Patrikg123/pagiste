@@ -12,13 +12,29 @@
 <body>
 <h:form>
 
-    <h1><h:outputText value ="Create a new course"></h:outputText></h1>
+    <h1><h:outputText value ="Create a new user"></h:outputText></h1>
     <br></br>
-    <h:inputText value="#{dbTestBean.coursename}"></h:inputText>
-    <h:selectOneMenu value="#{dbTestBean.teacher_id}">
-        <f:selectItems value="#{dbTestBean.ListTeachers()}" var="teacher" itemValue="#{teacher.teacher_id}" itemLabel="#{teacher.firstname}" />
-    </h:selectOneMenu>
-    <h:commandButton value="New Course" action="#{dbTestBean.CreateCourse}" class="btn btn-success"></h:commandButton>
+    <h:outputText value ="Create a new user"></h:outputText>
+    <br></br>
+    <h:outputText value ="Enter username"></h:outputText>
+    <h:inputText value="#{userView.username}"></h:inputText>
+    <br></br>
+    <h:outputText value ="Enter a password"></h:outputText>
+    <h:inputText value="#{userView.password}"></h:inputText>
+    <br></br>
+    <h:outputText value ="First name"></h:outputText>
+    <h:inputText value="#{userView.firstname}"></h:inputText>
+    <br></br>
+    <h:outputText value ="Last name"></h:outputText>
+    <h:inputText value="#{userView.lastname}"></h:inputText>
+    <br></br>
+    <h:outputText value ="Email"></h:outputText>
+    <h:inputText value="#{userView.emailaddress}"></h:inputText>
+
+
+
+
+    <h:commandButton value="New Course" action="#{userView.CreateUser}" class="btn btn-success"></h:commandButton>
 
 </h:form>
 

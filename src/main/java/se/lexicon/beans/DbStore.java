@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import se.lexicon.entities.Course;
 import se.lexicon.entities.Student;
 import se.lexicon.entities.Teacher;
+import se.lexicon.entities.Users2;
 
 
 import javax.ejb.Stateless;
@@ -62,6 +63,17 @@ public class DbStore {
                 em.createQuery("SELECT t from Teacher t", Teacher.class);
         List<Teacher> teacherlista = query3.getResultList();
         return teacherlista;
+    }
+
+    public void addUser(String username, String password, String emailadress, String firstname, String lastname) {
+        Users2 u = new Users2();
+        u.setUsername(username);
+        u.setPassword(password);
+        u.setEmailaddress(emailadress);
+        u.setFirstname(firstname);
+        u.setLastname(lastname);
+        System.out.println(em + ": Adding course " + u);
+        em.persist(u);
     }
 
 /* comment to commit */
