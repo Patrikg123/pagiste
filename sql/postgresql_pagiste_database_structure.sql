@@ -42,7 +42,7 @@ CREATE TABLE course_time (
 	course_id INT4 NOT NULL,
 	user_id INT4 NOT NULL,
 	course_date TIMESTAMP
-	,PRIMARY KEY (course_id));
+	,PRIMARY KEY (course_time_id));
 
 DROP SEQUENCE seq_student_course CASCADE;
 DROP TABLE student_course;

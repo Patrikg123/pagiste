@@ -6,10 +6,18 @@ import java.sql.Timestamp;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  */
+
 @Entity
 @Table(name = "attended", schema = "public", catalog = "pagiste")
 public class AttendedEntity {
+
+    // ***********************
+    // **     Attributes    **
+    // ***********************
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq_attended")
+    @SequenceGenerator(name="seq_attended", sequenceName="seq_attended", allocationSize=1)
     @Column(name = "attended_id")
     private int attendedId;
 
@@ -25,6 +33,10 @@ public class AttendedEntity {
     @Column(name = "last_updated")
     private Timestamp lastUpdated;
 
+
+    // ******************************
+    // **    Getters & Setters     **
+    // ******************************
 
     public int getAttendedId() {
         return attendedId;
@@ -69,6 +81,10 @@ public class AttendedEntity {
     public void setLastUpdated(Timestamp lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
+
+    // ******************************
+    // **     EQUALS & HASH        **
+    // ******************************
 
     @Override
     public boolean equals(Object o) {
