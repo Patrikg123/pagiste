@@ -25,6 +25,9 @@ public class CourseTimeEntity {
     @OneToOne(mappedBy = "course_time")
     private AttendedEntity attendedEntity;
 
+    @OneToOne(mappedBy = "course_time")
+    private StudentCourseEntity studentCourseEntity;
+
     // ***********************
     // **     Attributes    **
     // ***********************

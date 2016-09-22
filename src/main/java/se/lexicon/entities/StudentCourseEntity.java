@@ -19,6 +19,8 @@ public class StudentCourseEntity {
     // *************************************
 
     @OneToOne
+    @JoinColumn(name="course_time_id")
+    private CourseTimeEntity courseTimeEntity;
 
 
     // ***********************
