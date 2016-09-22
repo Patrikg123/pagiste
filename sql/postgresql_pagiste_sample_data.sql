@@ -12,15 +12,15 @@ INSERT INTO users (user_id, firstname, lastname, username, password, emailaddres
 
 
 
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (1,1,'admin') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (2,2,'teacher') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (3,3,'student') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (4,4,'student') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (5,5,'student') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (6,6,'teacher') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (7,7,'teacher') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (8,8,'teacher') ;
-INSERT INTO user_group (group_id, user_id, group_name) VALUES (9,9,'student') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (1,1,'admin') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (2,2,'teacher') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (3,3,'student') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (4,4,'student') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (5,5,'student') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (6,6,'teacher') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (7,7,'teacher') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (8,8,'teacher') ;
+INSERT INTO user_group (user_group_id, user_id, group_name) VALUES (9,9,'student') ;
 
 
 
