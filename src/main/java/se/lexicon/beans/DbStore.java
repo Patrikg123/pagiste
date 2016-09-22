@@ -65,7 +65,7 @@ public class DbStore {
         return teacherlista;
     }
 
-    public void addUser(String username, String password, String emailadress, String firstname, String lastname) {
+    public Users2 addUser(String username, String password, String emailadress, String firstname, String lastname) {
         Users2 u = new Users2();
         u.setUsername(username);
         u.setPassword(password);
@@ -74,6 +74,28 @@ public class DbStore {
         u.setLastname(lastname);
         System.out.println(em + ": Adding course " + u);
         em.persist(u);
+        addStudent(u);
+        em.flush();
+        System.out.println(u.getUser_id());
+        return u;
+    }
+
+
+    public void addStudent(Users2 u2) {
+        Student s = new Student();
+        s.setUser2 (u2);
+/*
+        s.setUsername(u2.getUsername());
+        s.setLastname(u2.getLastname());
+        s.setFirstname(u2.getFirstname());
+        s.setPassword(u2.getPassword());
+        s.setEmailaddress((u2.getEmailaddress()));
+
+*/
+
+        em.persist(s);
+
+
     }
 
 /* comment to commit */

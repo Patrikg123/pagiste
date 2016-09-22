@@ -30,6 +30,11 @@
     <br></br>
     <h:outputText value ="Email"></h:outputText>
     <h:inputText value="#{userView.emailaddress}"></h:inputText>
+    <h:selectOneMenu value="#{userView.role}">
+        <f:selectItem itemValue="Teacher" itemLabel="Teacher" />
+        <f:selectItem itemValue="Student" itemLabel="Student" />
+        <f:selectItem itemValue="3" itemLabel="Number1 - 3" />
+    </h:selectOneMenu>
 
 
 

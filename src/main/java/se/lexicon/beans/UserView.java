@@ -4,6 +4,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.persistence.*;
+
+import se.lexicon.entities.Student;
 import se.lexicon.entities.Users2;
 
 import javax.persistence.Entity;
@@ -30,6 +32,8 @@ public class UserView {
     private String firstname;
 
     private String lastname;
+
+    private String role;
 
     public String getUsername() {
         return username;
@@ -71,10 +75,27 @@ public class UserView {
         this.lastname = lastname;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public DbStore getStore() {
+        return store;
+    }
+
+    public void setStore(DbStore store) {
+        this.store = store;
+    }
+
     @Inject
     DbStore store;
 
     public String CreateUser(){
+        long usrid;
 
 
 
@@ -86,7 +107,11 @@ public class UserView {
         String emailadress = this.emailaddress;
         String firstname = this.firstname;
         String lastname = this.lastname;
-        store.addUser(username, password, emailadress, firstname, lastname);
+        Users2 u1 = store.addUser(username, password, emailadress, firstname, lastname);
+        //System.out.println(usrid);
+        String role = this.role;
+        if(this.role.equals("Student"))
+            store.addStudent(u1);
         return "admin_listcourses.xhtml";
 
     }

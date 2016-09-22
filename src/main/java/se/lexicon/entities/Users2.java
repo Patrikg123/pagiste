@@ -38,6 +38,8 @@ public class Users2{
     private String lastname;
 
 
+
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date last_login;
 
@@ -124,6 +126,10 @@ public class Users2{
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+
+
+
 
     //   }
 
