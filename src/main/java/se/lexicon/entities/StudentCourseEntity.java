@@ -4,12 +4,22 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Elev1 on 9/20/2016.
+ * Created by Stefan Lindh on 9/20/2016.
+ * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
  */
+
+// student_course - Which courses the student take participate in.
 
 @Entity
 @Table(name = "student_course", schema = "public", catalog = "pagiste")
 public class StudentCourseEntity {
+
+    // *************************************
+    // ** Set relations to other Entities **
+    // *************************************
+
+    @OneToOne
+
 
     // ***********************
     // **     Attributes    **
