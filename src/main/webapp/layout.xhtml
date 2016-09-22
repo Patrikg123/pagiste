@@ -6,19 +6,14 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:pm="http://primefaces.org/mobile">
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
 
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!--Import materialize.css-->
-    <h:outputStylesheet name="css/materialize.min.css"  media="screen,projection"/>
+    <title>The Pagiste Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <h:outputStylesheet name="css/bootstrap.min.css" />
+    <h:outputStylesheet name="css/style.css" />
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <title>pagiste</title>
 </h:head>
 <h:body>
 
@@ -34,6 +29,11 @@
             </div>
         </div>
 
+        <div class="content">
+            <ui:insert name="Content">
+                <ui:include src="login.xhtml" />
+            </ui:insert>
+        </div>
 
         <div class ="footer">
             <ui:insert name="Footer">
@@ -42,18 +42,8 @@
         </div>
 
     </div>
-    <!--
-    <ui:component></ui:component>
-    <f:event type="postAddToView" listener=""/>
-     We need to figure out a good layout
 
-
- -->
-
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-
+    <h:outputScript src="https://code.jquery.com/jquery-3.1.0.min.js"/>
+    <h:outputScript src="js/bootstrap.min.js" />
 </h:body>
 </html>
