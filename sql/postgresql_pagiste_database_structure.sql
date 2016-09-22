@@ -17,10 +17,10 @@ DROP TABLE user_group;
 
 CREATE SEQUENCE seq_user_group;
 CREATE TABLE user_group (
-	group_id INT4 NOT NULL DEFAULT nextval('seq_user_group'),
+	user_group_id INT4 NOT NULL DEFAULT nextval('seq_user_group'),
 	user_id INT4 NOT NULL,
 	group_name VARCHAR(128) NOT NULL
-	,PRIMARY KEY (group_id));
+	,PRIMARY KEY (user_group_id));
 
 DROP SEQUENCE seq_course CASCADE;
 DROP TABLE course;

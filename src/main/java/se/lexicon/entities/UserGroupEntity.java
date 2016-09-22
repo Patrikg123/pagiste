@@ -4,11 +4,21 @@ import javax.persistence.*;
 
 /**
  * Created by Stefan Lindh on 9/20/2016.
+ * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
  */
+
+// user_group - The role each person have. Could be student, teacher or admin.
 
 @Entity
 @Table(name = "user_group", schema = "public", catalog = "pagiste")
 public class UserGroupEntity {
+
+    // *************************************
+    // ** Set relations to other Entities **
+    // *************************************
+
+    @OneToOne(mappedBy = "user_group")
+    private UsersEntity usersEntity;
 
     // ***********************
     // **     Attributes    **

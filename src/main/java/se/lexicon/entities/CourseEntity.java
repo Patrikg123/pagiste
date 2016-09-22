@@ -1,14 +1,25 @@
 package se.lexicon.entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by Stefan Lindh on 9/20/2016.
+ * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
  */
+
+// course is a list of the courses.
 
 @Entity
 @Table(name = "course", schema = "public", catalog = "pagiste")
 public class CourseEntity {
+
+    // *************************************
+    // ** Set relations to other Entities **
+    // *************************************
+
+    @OneToMany(mappedBy="CourseEntity")
+    private Set<CourseTimeEntity> courseTimeEntitySet;
 
     // ***********************
     // **     Attributes    **
@@ -55,6 +66,17 @@ public class CourseEntity {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+
+    public Set<CourseTimeEntity> getCourseTimeEntitySet()
+    {
+        return courseTimeEntitySet;
+    }
+    public void setCourseTimeEntitySet(Set<CourseTimeEntity> courseTimeEntitySet)
+    {
+        this.courseTimeEntitySet = courseTimeEntitySet;
+    }
+
 
     // ******************************
     // **     EQUALS & HASH        **

@@ -32,3 +32,5 @@ Här får du upp Password for user admin: skriv lösenordet <Cow$girl@!>
 
 3. psql -U admin -d pagiste -h localhost -f postgresql_pagiste_sample_data.sql
 
+*Done
+

@@ -5,11 +5,22 @@ import java.sql.Timestamp;
 
 /**
  * Created by Stefan Lindh on 9/20/2016.
+ * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
  */
+
+// users - Account info list.
 
 @Entity
 @Table(name = "users", schema = "public", catalog = "pagiste")
 public class UsersEntity {
+
+    // *************************************
+    // ** Set relations to other Entities **
+    // *************************************
+
+    @OneToOne
+    @JoinColumn(name="user_grop_id")
+    private UserGroupEntity userGroupEntity;
 
     // ***********************
     // **     Attributes    **

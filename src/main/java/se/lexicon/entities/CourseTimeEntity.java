@@ -5,11 +5,28 @@ import java.sql.Timestamp;
 
 /**
  * Created by Stefan Lindh on 9/20/2016.
+ * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
  */
+
+// course_time - the scheduled lession times.
 
 @Entity
 @Table(name = "course_time", schema = "public", catalog = "pagiste")
 public class CourseTimeEntity {
+
+    // *************************************
+    // ** Set relations to other Entities **
+    // *************************************
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private CourseEntity getCourseEntity;
+
+    @OneToOne(mappedBy = "course_time")
+    private AttendedEntity attendedEntity;
+
+    @OneToOne(mappedBy = "course_time")
+    private StudentCourseEntity studentCourseEntity;
 
     // ***********************
     // **     Attributes    **
