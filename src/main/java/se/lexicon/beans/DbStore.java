@@ -74,7 +74,7 @@ public class DbStore {
         u.setLastname(lastname);
         System.out.println(em + ": Adding course " + u);
         em.persist(u);
-        addStudent(u);
+
         em.flush();
         System.out.println(u.getUser_id());
         return u;
@@ -83,20 +83,51 @@ public class DbStore {
 
     public void addStudent(Users2 u2) {
         Student s = new Student();
-        s.setUser2 (u2);
-/*
+
+        /*
         s.setUsername(u2.getUsername());
         s.setLastname(u2.getLastname());
         s.setFirstname(u2.getFirstname());
         s.setPassword(u2.getPassword());
         s.setEmailaddress((u2.getEmailaddress()));
 
-*/
+        */
+
+
+
+        s.setUser_id(u2.getUser_id());
+        //s.setUsername(u2.getUsername());
+
+
 
         em.persist(s);
 
 
     }
+
+    public void removestudent(long studentid){
+
+        Student student = em.find(Student.class, studentid);
+
+        em.remove(student);
+
+
+
+
+    }
+
+    public String NametoFind(long id){
+
+        Users2 u = em.find(Users2.class, id);
+        return u.getFirstname();
+    }
+
+    public String LastNametoFind(long id){
+
+        Users2 u = em.find(Users2.class, id);
+        return u.getLastname();
+    }
+
 
 /* comment to commit */
 }

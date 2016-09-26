@@ -129,4 +129,25 @@ public class StudentView{
 
         return  registeredcourses;
     }
+
+    public void deleteStudent(long studentid){
+
+        store.removestudent(studentid);
+
+
+    }
+
+    public String findName(long id){
+
+       String nametofind = store.NametoFind(id);
+        return nametofind;
+
+
+    }
+
+    public String findLastName(long id) {
+
+        String nametofind = store.LastNametoFind(id);
+        return nametofind;
+    }
 }

@@ -1,10 +1,13 @@
+
+/*
+
 package se.lexicon.entities;
 
 import javax.persistence.*;
 
 /**
  * Created by Elev1 on 9/20/2016.
- */
+
 @Entity
 @Table(name = "sequence", schema = "public", catalog = "pagiste")
 public class SequenceEntity {
@@ -51,3 +54,6 @@ public class SequenceEntity {
         return result;
     }
 }
+
+
+*/

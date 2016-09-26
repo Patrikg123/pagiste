@@ -1,14 +1,17 @@
+
+/*
+
 package se.lexicon.entities;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
+
  * Created by Stefan Lindh on 9/20/2016.
  * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
- */
 
-// users - Account info list.
+
+users - Account info list.
 
 @Entity
 @Table(name = "users", schema = "public", catalog = "pagiste")
@@ -147,3 +150,4 @@ public class UsersEntity {
         return result;
     }
 }
+*/

@@ -18,25 +18,31 @@
             <f:facet name="header">Student Id</f:facet>
             <h:outputText value="#{s.student_id}"></h:outputText>
         </h:column>
-
-
         <h:column>
-            <f:facet name="header">User Id</f:facet>
-            <h:outputText value="#{s.user_id}"></h:outputText>
+            <f:facet name="header">Username</f:facet>
+            <h:outputText value="#{s.username}"></h:outputText>
         </h:column>
 
         <h:column>
-            <f:facet name="header">first Name</f:facet>
-            <h:outputText value="#{studentView.findName(s.user_id)}"></h:outputText>
+            <f:facet name="header">First name</f:facet>
+            <h:outputText value="#{s.firstname}"></h:outputText>
         </h:column>
 
         <h:column>
-            <f:facet name="header">first Name</f:facet>
-            <h:outputText value="#{studentView.findLastName(s.user_id)}"></h:outputText>
+            <f:facet name="header">Last name</f:facet>
+            <h:outputText value="#{s.lastname}"></h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Courses</f:facet>
+            <h:dataTable value="#{s.courses}" var="c" >
+                <h:column>
+
+                    <h:outputText value="#{c.coursename}"></h:outputText>
+                </h:column>
+            </h:dataTable>
         </h:column>
     </h:dataTable>
-
-    <h:commandButton value="New Course" action="#{studentView.deleteStudent(8352)}" class="btn btn-success"></h:commandButton>
 
 
 </h:form>

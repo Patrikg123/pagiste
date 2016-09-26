@@ -35,12 +35,15 @@ public class Student {
             generator="seq")
     @Column(name = "student_id", updatable=false)
     private long student_id;
+   // private String username;
 
-//    @Column(table="users2", name="username")
- //   private String username;
+    /*
 
-//    @Column(table="users2", name="firstname")
-/*    private String firstname;
+    @Column(table="users2", name="username")
+    private String username;
+
+    @Column(table="users2", name="firstname")
+    private String firstname;
 
     @Column(table="users2", name="lastname")
     private String lastname;
@@ -53,10 +56,10 @@ public class Student {
 
     */
 
-    @OneToOne()
-    @JoinColumn(
-            name="student_id", unique=true, nullable=false, updatable=false)
-    private  Users2 user2;
+
+
+
+    private  long user_id;
 
     @ManyToMany
     @JoinTable(name="student_course",
@@ -76,7 +79,15 @@ public class Student {
 
     //Getters and setters
 
+/*
+    public String getEmailaddress() {
+        return emailaddress;
+    }
 
+    public void setEmailaddress(String emailaddress) {
+        this.emailaddress = emailaddress;
+    }
+*/
     public long getStudent_id() {
         return student_id;
     }
@@ -92,6 +103,8 @@ public class Student {
     public void setUsername(String username) {
         this.username = username;
     }
+
+/*
 
     public String getFirstname() {
         return firstname;
@@ -117,14 +130,17 @@ public class Student {
         this.courses = courses;
     }
 
-    public Users2 getUser2() {
-        return user2;
+    public long getUser_id() {
+        return user_id;
     }
 
-    public void setUser2(Users2 user2) {
-        this.user2 = user2;
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+
     }
-/*
+
+    /*
+
     public String getPassword() {
         return password;
     }
@@ -133,13 +149,5 @@ public class Student {
         this.password = password;
     }
 
-    public String getEmailaddress() {
-        return emailaddress;
-    }
-
-    public void setEmailaddress(String emailaddress) {
-        this.emailaddress = emailaddress;
-    }
     */
 }
-

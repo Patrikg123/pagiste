@@ -1,3 +1,5 @@
+/*
+
 package se.lexicon.entities;
 
 import javax.persistence.*;
@@ -6,7 +8,7 @@ import java.util.Set;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
- */
+
 
 // course is a list of the courses.
 
@@ -104,3 +106,5 @@ public class CourseEntity {
         return result;
     }
 }
+
+*/

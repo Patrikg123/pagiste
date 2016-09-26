@@ -1,3 +1,5 @@
+/*
+
 package se.lexicon.entities;
 
 import javax.persistence.*;
@@ -6,7 +8,7 @@ import java.sql.Timestamp;
 /**
  * Created by Stefan Lindh on 9/20/2016.
  * @author Stefan Lindh, Patrik Gustafsson and Gino Molina.
- */
+
 
 // attended - A list of the lessons the student have attended to.
 
@@ -124,3 +126,4 @@ public class AttendedEntity {
         return result;
     }
 }
+*/
