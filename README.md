@@ -20,5 +20,5 @@ backup file.
 If you run into problem check http://get.enterprisedb.com/docs/Tutorial_Windows_PP_Backup_Restore.pdf
 You might need to create a database:
 
-CREATE USER admin WITH PASSWORD 'Cow$girl@!';
-CREATE DATABASE pagiste WITH OWNER admin ENCODING 'UTF8';
+
+
