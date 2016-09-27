@@ -13,7 +13,12 @@ Note: The database you specify with the -d option is not affected by the restore
 operation. The psql program requires a session to be established over a database
 connection before it can process the SQL statements and psql commands from the
 backup file.
-psql -d postgres -U postgres -f C:\Backup\pagistebackup.psql
+
+1 CREATE USER admin WITH PASSWORD 'Cow$girl@!';
+2 psql -d postgres -U postgres -f C:\Backup\pagistebackup.psql
 
 If you run into problem check http://get.enterprisedb.com/docs/Tutorial_Windows_PP_Backup_Restore.pdf
-You might need to create a database 
+You might need to create a database:
+
+CREATE USER admin WITH PASSWORD 'Cow$girl@!';
+CREATE DATABASE pagiste WITH OWNER admin ENCODING 'UTF8';
