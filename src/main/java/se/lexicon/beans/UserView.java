@@ -112,6 +112,8 @@ public class UserView {
         String role = this.role;
         if(this.role.equals("Student"))
             store.addStudent(u1);
+        if(this.role.equals("Teacher"))
+            store.addTeacher(u1);
         return "admin_listcourses.xhtml";
 
     }

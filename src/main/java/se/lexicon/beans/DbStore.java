@@ -105,6 +105,24 @@ public class DbStore {
 
     }
 
+
+    public void addTeacher(Users2 u2) {
+        Teacher t = new Teacher();
+
+
+
+
+        t.setUser_id(u2.getUser_id());
+        //s.setUsername(u2.getUsername());
+
+
+
+        em.persist(t);
+
+
+    }
+
+
     public void removestudent(long studentid){
 
         Student student = em.find(Student.class, studentid);

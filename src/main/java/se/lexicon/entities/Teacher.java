@@ -13,36 +13,25 @@ import javax.validation.constraints.Max;
  */
 @Entity
 @Table(name = "teacher")
-@SecondaryTable(name = "users", pkJoinColumns=@PrimaryKeyJoinColumn(name="user_id", referencedColumnName="user_id"))
+//@SecondaryTable(name = "users", pkJoinColumns=@PrimaryKeyJoinColumn(name="user_id", referencedColumnName="user_id"))
 public class Teacher {
-
 
 
     /**
      * Created by Elev1 on 2016-08-25.
-     *
      */
 
 
-
     @Id
-    @SequenceGenerator(name="teacher_teacer_id_seq",
-            sequenceName="teacher_teacer_id_seq",
-            allocationSize=1)
+    @SequenceGenerator(name = "teacher_teacer_id_seq",
+            sequenceName = "teacher_teacer_id_seq",
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="seq")
-    @Column(name = "teacher_id", updatable=false)
+            generator = "seq")
+    @Column(name = "teacher_id", updatable = false)
     private long teacher_id;
 
-    @Column(table="users", name="username")
-    private String username;
-
-    @Column(table="users", name="firstname")
-    private String firstname;
-
-    @Column(table="users", name="lastname")
-    private String lastname;
-
+    private  long user_id;
 
 
     //Getters and setters
@@ -54,29 +43,16 @@ public class Teacher {
 
     public void setTeacher_id(long teacher_id) {
         this.teacher_id = teacher_id;
+
+
     }
 
-    public String getUsername() {
-        return username;
+    public long getUser_id() {
+        return user_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
     }
 }
+

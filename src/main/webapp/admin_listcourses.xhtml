@@ -8,11 +8,54 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+    <link rel ="stylesheet" href="resources/css/style.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" ></script>
 </head>
 <body>
+<div class="page-wrapper">
+    <div class="intro" id="zen-intro">
+
+        <div id="header-container">
+            <div class="header">
+                <ui:insert name="header">
+                    <ui:include src="header.xhtml" />
+
+                </ui:insert>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://localhost:8080/pagiste/index.xhtml">The Pagiste Project</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:8080/pagiste/index.xhtml">Home</a></li>
+                <li><a href="http://localhost:8080/pagiste/admin_listcourses.xhtml">Courses</a></li>
+
+                <li><a href="http://localhost:8080/pagiste/admin_liststudents.xhtml">Students</a></li>
+                <li><a href="http://localhost:8080/pagiste/admin_listteachers.xhtml">Teachers</a></li>
+                <li><a href="http://localhost:8080/pagiste/admin_users.xhtml">Add a user</a></li>
+                <li><a href="http://localhost:8080/pagiste/admin_courses.xhtml">Add a course</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row">
+<div class="col-md-4"></div><div class="col-md-4">
 <h:form>
 
-    <h1><h:outputText value ="Create a new course"></h:outputText></h1>
+    <h1><h:outputText value ="Courses"></h:outputText></h1>
     <h:dataTable value="#{dbTestBean.ListCourses()}" var="c" rules="all">
         <h:column>
             <f:facet name="header">Course</f:facet>
@@ -26,6 +69,10 @@
 
 
 </h:form>
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
 
 
 </body>

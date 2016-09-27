@@ -13,14 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" ></script>
-
-        <h:outputScript src="https://code.jquery.com/jquery-3.1.0.min.js"/>
-    <h:outputStylesheet name="css/bootstrap.min.css" />
-    <h:outputStylesheet name="css/style.css" />
 </head>
 <body>
-
-
 <div class="page-wrapper">
     <div class="intro" id="zen-intro">
 
@@ -59,47 +53,45 @@
 
 
 
+
     <div class="row">
-    <div class="col-md-4"></div><div class="col-md-4">
+<div class="col-md-4"></div><div class="col-md-4">
 <h:form>
 
-    <h1><h:outputText value ="Create a new user"></h:outputText></h1>
-    <br></br>
-    <h:outputText value ="Create a new user"></h:outputText>
-    <br></br>
-    <h:outputText value ="Enter username"></h:outputText>
-    <h:inputText value="#{userView.username}"></h:inputText>
-    <br></br>
-    <h:outputText value ="Enter a password"></h:outputText>
-    <h:inputText value="#{userView.password}"></h:inputText>
-    <br></br>
-    <h:outputText value ="First name"></h:outputText>
-    <h:inputText value="#{userView.firstname}"></h:inputText>
-    <br></br>
-    <h:outputText value ="Last name"></h:outputText>
-    <h:inputText value="#{userView.lastname}"></h:inputText>
-    <br></br>
-    <h:outputText value ="Email"></h:outputText>
-    <h:inputText value="#{userView.emailaddress}"></h:inputText>
-    <h:selectOneMenu value="#{userView.role}">
-        <f:selectItem itemValue="Teacher" itemLabel="Teacher" />
-        <f:selectItem itemValue="Student" itemLabel="Student" />
-        <f:selectItem itemValue="3" itemLabel="Number1 - 3" />
-    </h:selectOneMenu>
+    <h1><h:outputText value ="Teachers"></h:outputText></h1>
+    <h:dataTable value="#{teacherview.Listteachers()}" var="t" rules="all">
+        <h:column>
+            <f:facet name="header">Teacher Id</f:facet>
+            <h:outputText value="#{t.teacher_id}"></h:outputText>
+        </h:column>
 
 
+        <h:column>
+            <f:facet name="header">User Id</f:facet>
+            <h:outputText value="#{t.user_id}"></h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">First Name</f:facet>
+            <h:outputText value="#{studentView.findName(t.user_id)}"></h:outputText>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Last Name</f:facet>
+            <h:outputText value="#{studentView.findLastName(t.user_id)}"></h:outputText>
+        </h:column>
+    </h:dataTable>
+
+    <h:commandButton value="remove Student" action="#{studentView.deleteStudent(9402)}" class="btn btn-success"></h:commandButton>
 
 
-    <h:commandButton value="New User" action="#{userView.CreateUser}" class="btn btn-success"></h:commandButton>
 
 </h:form>
-    </div>
-    <div class="col-md-4"></div>
-    </div>
-
-
-
 </div>
+<div class="col-md-4"></div>
+</div>
+</div>
+
+
 </body>
 </html>
-

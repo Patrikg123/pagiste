@@ -1,6 +1,62 @@
-/* Custom Stylesheet */
+.navbar-inverse{
+    background-color: #b4d4f0;
+    background-image: none;
 
 
 
 
+
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #0033ff;
+}
+
+
+
+
+
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #50a4e8;
+    color: #ffffff;
+}
+
+/*
+.navbar-inverse .navbar-brand {
+    color: #0000ff;
+}
+*/
+/*
+.navbar-inverse .navbar-nav:hover,
+.navbar-inverse .navbar-nav:focus {
+    color: #000000;
+}
+*/
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    background-color: #50a4e8;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand{
+    color: #0033ff;
+}
+
+
+/*
+.navbar-inner, .navbar .btn-navbar {
+
+    border:0px;
+}
+*/
+
+.navbar-inverse .navbar-inner {
+    background-image: none;
+    background-color: #1f5b73;
+    border:0px;
+    border-radius: 0px !important;
+}
+.navbar-brand > li >a{
+    color:black;
 }
